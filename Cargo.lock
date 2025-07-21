@@ -2430,27 +2430,6 @@ dependencies = [
 
 [[package]]
 name = "shuttle-api-client"
-version = "0.53.0"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "d5d908656f03e937c1f80d114807a1e36910205ffda18034e58b30a1cef052aa"
-dependencies = [
- "anyhow",
- "async-trait",
- "headers",
- "http 1.3.1",
- "percent-encoding",
- "reqwest",
- "reqwest-middleware",
- "serde",
- "serde_json",
- "shuttle-common 0.53.0",
- "tokio",
- "tokio-tungstenite",
- "url",
-]
-
-[[package]]
-name = "shuttle-api-client"
 version = "0.56.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "03889f590bb51757e1a1fcf2e7748ecc3f37565b24dc27609cc8a484f3b1ad3d"
@@ -2465,22 +2444,10 @@ dependencies = [
  "reqwest-middleware",
  "serde",
  "serde_json",
- "shuttle-common 0.56.0",
+ "shuttle-common",
  "tokio",
  "tokio-tungstenite",
  "url",
-]
-
-[[package]]
-name = "shuttle-codegen"
-version = "0.53.0"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "b8dda1ad91f3a8a62d6c7742f54611c1ab68f920555930683d128b9606a55f4c"
-dependencies = [
- "proc-macro-error2",
- "proc-macro2",
- "quote",
- "syn 2.0.100",
 ]
 
 [[package]]
@@ -2494,23 +2461,6 @@ dependencies = [
  "quote",
  "shuttle-ifc",
  "syn 2.0.100",
-]
-
-[[package]]
-name = "shuttle-common"
-version = "0.53.0"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "77e972b361d64c41475fc408154a3ddd0733c8a589554e47040399dbe18cd5b6"
-dependencies = [
- "chrono",
- "http 1.3.1",
- "semver",
- "serde",
- "serde_json",
- "strum",
- "tracing",
- "typeshare",
- "zeroize",
 ]
 
 [[package]]
@@ -2536,7 +2486,7 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "370105d6f8606fd69883e11ce6fcb310b618a53071c7a44a4bfac8ce42ad6f05"
 dependencies = [
  "proc-macro2",
- "shuttle-common 0.56.0",
+ "shuttle-common",
  "syn 2.0.100",
 ]
 
@@ -2547,31 +2497,7 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "cefc5f9f57927a30ebef2c5e2b5d4cf5d499e164eb489f67659d16f705e9b243"
 dependencies = [
  "rocket",
- "shuttle-runtime 0.56.0",
-]
-
-[[package]]
-name = "shuttle-runtime"
-version = "0.53.0"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "f20a1c3aaa101a34a395289f08a3e032036f397c51cee7b97c03189450ef1488"
-dependencies = [
- "anyhow",
- "async-trait",
- "http-body 1.0.1",
- "http-body-util",
- "hyper 1.6.0",
- "hyper-util",
- "serde",
- "serde_json",
- "shuttle-api-client 0.53.0",
- "shuttle-codegen 0.53.0",
- "shuttle-common 0.53.0",
- "shuttle-service 0.53.0",
- "strfmt",
- "tokio",
- "tracing",
- "tracing-subscriber",
+ "shuttle-runtime",
 ]
 
 [[package]]
@@ -2588,27 +2514,14 @@ dependencies = [
  "hyper-util",
  "serde",
  "serde_json",
- "shuttle-api-client 0.56.0",
- "shuttle-codegen 0.56.0",
- "shuttle-common 0.56.0",
- "shuttle-service 0.56.0",
+ "shuttle-api-client",
+ "shuttle-codegen",
+ "shuttle-common",
+ "shuttle-service",
  "strfmt",
  "tokio",
  "tracing",
-]
-
-[[package]]
-name = "shuttle-service"
-version = "0.53.0"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "f9d46871efe0633f0456fb76dae5dbad7158eff8a7cc30370110d5c3d4cc12aa"
-dependencies = [
- "anyhow",
- "async-trait",
- "serde",
- "shuttle-common 0.53.0",
- "strfmt",
- "thiserror 2.0.12",
+ "tracing-subscriber",
 ]
 
 [[package]]
@@ -2620,7 +2533,7 @@ dependencies = [
  "anyhow",
  "async-trait",
  "serde",
- "shuttle-common 0.56.0",
+ "shuttle-common",
  "strfmt",
  "thiserror 2.0.12",
 ]
@@ -2712,7 +2625,7 @@ dependencies = [
  "rocket",
  "shuttle",
  "shuttle-rocket",
- "shuttle-runtime 0.53.0",
+ "shuttle-runtime",
  "table-extract",
  "tokio",
 ]
