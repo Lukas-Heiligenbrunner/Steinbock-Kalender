@@ -1,12 +1,10 @@
-FROM rust:latest AS builder
+FROM rust:alpine AS builder
+RUN apk add --no-cache build-base
+WORKDIR /app
 COPY . .
 RUN cargo build --release
 
-FROM ubuntu:latest
-COPY --from=builder ./target/release/steinbockschraubtermine ./target/release/steinbockschraubtermine
+FROM alpine:latest
+COPY --from=builder /app/target/release/steinbockschraubtermine /usr/local/bin/steinbockschraubtermine
 
-RUN apt-get update && apt-get install -y \
-    curl \
-    && rm -rf /var/lib/apt/lists/* \
-
-CMD ["/target/release/steinbockschraubtermine"]
+CMD ["steinbockschraubtermine"]
